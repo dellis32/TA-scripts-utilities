@@ -1,0 +1,32 @@
+ 
+fixLayout =================================================
+var el = document.querySelector('[data-automation-controlname="html1"]');
+        if (el) {
+            el.style.float = "none";  // Remove float
+            void el.offsetHeight;      // Force reflow
+            el.style.float = "left";   // Reapply float
+        }
+
+
+setSandbox ==============================================
+Make TA iFrame(HTML) control editable
+(function() {
+    // Find the existing iframe by title.
+    var iframe = document.querySelector('iframe[title="html1"]');
+    // Set the new sandbox attribute.
+    iframe.setAttribute("sandbox", "allow-scripts allow-same-origin");
+})();
+
+
+call a function in iFrame =====================================
+clearEOBSessionData 
+ var iframe = document.querySelector('iframe[title="html1"]');
+        if (iframe) {
+             iframe.contentWindow.clearEobSessionStorage();
+        }
+getEOBData ============================================
+ var iframe = document.querySelector('iframe[title="html1"]');
+        if (iframe) {
+             const updatedData = iframe.contentWindow.getUpdatedEobData();
+        }
+
